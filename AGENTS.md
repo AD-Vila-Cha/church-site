@@ -36,3 +36,13 @@ Tasks are tracked as **GitHub issues** on this repo. Every branch and commit tie
 - Keep content structured so it maps cleanly onto future Sanity schemas (don't hardcode copy that should become CMS-editable in Milestone 3).
 - Church management software (e.g. ChMeetings) is a **separate** initiative — not part of this site's scope unless a milestone explicitly says so.
 - Tasks live in **GitHub issues** (not Notion/GitLab) — see the Git workflow section above for branch/commit conventions tied to them.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
