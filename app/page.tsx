@@ -2,22 +2,22 @@ import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
 
 const LOCATIONS = [
   {
-    city: "Vila Chã",
-    address: "Rua da Igreja, Vila Chã · Vila do Conde",
-    maps: "https://www.google.com/maps/search/?api=1&query=Assembleia+de+Deus+Vila+Ch%C3%A3+Vila+do+Conde",
+    city: "Vila do Conde",
+    address: "R. Dom João III 70-84, 4480-646 Vila do Conde",
+    maps: "https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Jo%C3%A3o%20III%2070-84%2C%204480-646%20Vila%20do%20Conde",
     services: [
-      { day: "Ter", time: "21:00", type: "Culto de Oração" },
-      { day: "Sex", time: "21:00", type: "Culto de Estudo" },
+      { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
       { day: "Dom", time: "10:00", type: "Culto de Celebração" },
+      { day: "Dom", time: "15:30", type: "Culto de Celebração" },
     ],
   },
   {
-    city: "Vila do Conde",
-    address: "Auditório da Santa Casa da Misericórdia · Vila do Conde",
-    maps: "https://www.google.com/maps/search/?api=1&query=Assembleia+de+Deus+igreja+evang%C3%A9lica+em+Vila+do+Conde",
+    city: "Barcelos",
+    address: "Urbanização da Formiga, Edifício Panorâmico",
+    maps: "https://www.google.com/maps/search/?api=1&query=Urbaniza%C3%A7%C3%A3o%20da%20Formiga%2C%20Edif%C3%ADcio%20Panor%C3%A2mico%2C%20Barcelos",
     services: [
-      { day: "Qui", time: "21:00", type: "Culto de Estudo" },
-      { day: "Dom", time: "10:00", type: "Culto de Celebração" },
+      { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
+      { day: "Dom", time: "15:00", type: "Culto de Celebração" },
     ],
   },
 ];
