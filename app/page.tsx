@@ -1,4 +1,26 @@
-import { Facebook, Instagram, Mail, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
+
+const LOCATIONS = [
+  {
+    city: "Vila do Conde",
+    address: "R. Dom João III 70-84, 4480-646 Vila do Conde",
+    maps: "https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Jo%C3%A3o%20III%2070-84%2C%204480-646%20Vila%20do%20Conde",
+    services: [
+      { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
+      { day: "Dom", time: "10:00", type: "Culto de Celebração" },
+      { day: "Dom", time: "15:30", type: "Culto de Celebração" },
+    ],
+  },
+  {
+    city: "Barcelos",
+    address: "Urbanização da Formiga, Edifício Panorâmico, Arcozelo, Barcelos",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua%20da%20Formiga%2C%20Arcozelo%2C%20Barcelos",
+    services: [
+      { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
+      { day: "Dom", time: "15:00", type: "Culto de Celebração" },
+    ],
+  },
+];
 
 const SOCIALS = [
   {
@@ -37,21 +59,69 @@ export default function Home() {
         </span>
       </header>
 
-      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-start justify-center px-5 py-16 md:px-8">
-        <p className="eyebrow">Assembleia de Deus · Vila Chã</p>
-        <h1 className="mt-5 max-w-3xl text-5xl uppercase leading-[0.95] sm:text-6xl md:text-7xl">
-          O novo site está <span className="text-gradient-ember">quase aí</span>.
-        </h1>
-        <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-          Estamos a preparar um novo espaço digital para a nossa igreja. Em
-          breve com tudo sobre quem somos, o que fazemos e onde nos encontrar.
-        </p>
-        <a
-          href="mailto:geral@advilacha.pt"
-          className="mt-10 inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
-        >
-          Fale connosco
-        </a>
+      <main className="flex flex-1 flex-col">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-start px-5 py-16 md:px-8">
+          <p className="eyebrow">Assembleia de Deus · Vila Chã</p>
+          <h1 className="mt-5 max-w-3xl text-5xl uppercase leading-[0.95] sm:text-6xl md:text-7xl">
+            O novo site está <span className="text-gradient-ember">quase aí</span>.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            Estamos a preparar um novo espaço digital para a nossa igreja. Em
+            breve com tudo sobre quem somos, o que fazemos e onde nos encontrar.
+          </p>
+          <a
+            href="mailto:geral@advilacha.pt"
+            className="mt-10 inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Fale connosco
+          </a>
+        </div>
+
+        <section className="border-t py-20 md:py-24">
+          <div className="mx-auto max-w-7xl px-5 md:px-8">
+            <p className="eyebrow">Onde estamos</p>
+            <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[0.95] sm:text-5xl">
+              Horários das celebrações
+            </h2>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              {LOCATIONS.map((loc) => (
+                <div key={loc.city} className="surface-card p-8 md:p-10">
+                  <h3 className="font-display text-3xl uppercase text-foreground">
+                    {loc.city}
+                  </h3>
+                  <p className="mt-3 flex items-start gap-2 text-muted-foreground">
+                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                    <span>{loc.address}</span>
+                  </p>
+
+                  <dl className="mt-8 divide-y divide-border border-t">
+                    {loc.services.map((s) => (
+                      <div key={s.day + s.time} className="flex items-baseline gap-4 py-4">
+                        <dt className="w-12 shrink-0 font-display text-sm font-extrabold uppercase tracking-widest text-primary">
+                          {s.day}
+                        </dt>
+                        <span className="w-20 shrink-0 font-display text-lg text-foreground">
+                          {s.time}
+                        </span>
+                        <dd className="min-w-0 text-muted-foreground italic">{s.type}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <a
+                    href={loc.maps}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary hover:underline"
+                  >
+                    Ver no mapa →
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t bg-surface">
