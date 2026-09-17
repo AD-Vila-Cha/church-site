@@ -46,23 +46,29 @@ const SOCIALS = [
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <header className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
-        <img
-          src="/logo.png"
-          alt="Assembleia de Deus Vila Chã"
-          width={56}
-          height={56}
-          className="h-11 w-11 shrink-0 object-contain md:h-14 md:w-14"
-        />
-        <span className="font-display text-sm font-extrabold uppercase tracking-[0.2em] md:text-base">
-          AD Vila Chã
-        </span>
+      <header className="border-b">
+        <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
+          <img
+            src="/logo-icon.png"
+            alt=""
+            width={96}
+            height={170}
+            className="h-14 w-auto shrink-0 object-contain md:h-20"
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="font-display text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground md:text-xs">
+              Assembleia de Deus
+            </span>
+            <span className="font-display text-xl font-extrabold uppercase tracking-wide md:text-3xl">
+              Vila Chã
+            </span>
+          </div>
+        </div>
       </header>
 
       <main className="flex flex-1 flex-col">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start px-5 py-16 md:px-8">
-          <p className="eyebrow">Assembleia de Deus · Vila Chã</p>
-          <h1 className="mt-5 max-w-3xl text-5xl uppercase leading-[0.95] sm:text-6xl md:text-7xl">
+          <h1 className="max-w-3xl text-5xl uppercase leading-[0.95] sm:text-6xl md:text-7xl">
             O novo site está <span className="text-gradient-ember">quase aí</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
