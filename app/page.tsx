@@ -13,8 +13,8 @@ const LOCATIONS = [
   },
   {
     city: "Barcelos",
-    address: "Urbanização da Formiga, Edifício Panorâmico",
-    maps: "https://www.google.com/maps/search/?api=1&query=Urbaniza%C3%A7%C3%A3o%20da%20Formiga%2C%20Edif%C3%ADcio%20Panor%C3%A2mico%2C%20Barcelos",
+    address: "Urbanização da Formiga, Edifício Panorâmico, Arcozelo, Barcelos",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua%20da%20Formiga%2C%20Arcozelo%2C%20Barcelos",
     services: [
       { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
       { day: "Dom", time: "15:00", type: "Culto de Celebração" },
