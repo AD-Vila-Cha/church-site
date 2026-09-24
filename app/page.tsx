@@ -49,10 +49,10 @@ export default function Home() {
       <header className="border-b">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
           <img
-            src="/logo-icon.png"
+            src="/cross-logo.svg"
             alt=""
-            width={96}
-            height={170}
+            width={117.75}
+            height={202.5}
             className="h-14 w-auto shrink-0 object-contain md:h-20"
           />
           <div className="flex flex-col leading-tight">
