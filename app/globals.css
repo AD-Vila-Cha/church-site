@@ -5,8 +5,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-display: "Archivo", system-ui, sans-serif;
-  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
@@ -21,19 +21,19 @@
 :root {
   --radius: 0.25rem;
 
-  /* Light warm palette, taken from the ADVC brand mark */
-  --background: oklch(0.98 0.005 80);
-  --foreground: oklch(0.28 0.02 280);
-  --surface: oklch(0.95 0.01 80);
-  --gold: oklch(0.75 0.16 55);
-  --gold-deep: oklch(0.65 0.18 55);
-  --primary: oklch(0.65 0.18 55);
-  --primary-foreground: oklch(0.99 0.005 80);
-  --muted-foreground: oklch(0.55 0.02 80);
-  --border: oklch(0.28 0.02 280 / 12%);
+  /* Brand palette — see docs/BRAND.md (source: brand board) */
+  --background: #ffffff;
+  --foreground: #444444;
+  --surface: rgb(68 68 68 / 4%);
+  --gold: #e6b922;
+  --gold-deep: #d06f29;
+  --primary: var(--gold-deep);
+  --primary-foreground: #ffffff;
+  --muted-foreground: rgb(68 68 68 / 65%);
+  --border: rgb(68 68 68 / 12%);
 
   --gradient-ember: linear-gradient(135deg, var(--gold-deep), var(--gold));
-  --shadow-lift: 0 24px 60px -24px oklch(0.28 0.02 280 / 0.18);
+  --shadow-lift: 0 24px 60px -24px rgb(68 68 68 / 18%);
 }
 
 @layer base {
