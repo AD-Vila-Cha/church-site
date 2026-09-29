@@ -68,7 +68,7 @@ export default function Home() {
 
       <main className="flex flex-1 flex-col">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start px-5 py-16 md:px-8">
-          <h1 className="max-w-3xl text-5xl uppercase leading-[0.95] sm:text-6xl md:text-7xl">
+          <h1 className="max-w-3xl text-5xl uppercase leading-[1.1] sm:text-6xl md:text-7xl">
             O novo site está <span className="text-gradient-ember">quase aí</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
@@ -86,7 +86,7 @@ export default function Home() {
         <section className="border-t py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <p className="eyebrow">Onde estamos</p>
-            <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[0.95] sm:text-5xl">
+            <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[1.1] sm:text-5xl">
               Horários das celebrações
             </h2>
 
