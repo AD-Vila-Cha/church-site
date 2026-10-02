@@ -23,9 +23,9 @@ export function WhoWeAre() {
             <h2 className="mt-5 text-4xl uppercase leading-[1.1] sm:text-5xl lg:text-6xl">
               Uma igreja
               <br />
-              com fogo e
+              com raízes e
               <br />
-              <span className="text-gradient-ember">com raízes</span>
+              <span className="text-gradient-ember">com propósito</span>
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
