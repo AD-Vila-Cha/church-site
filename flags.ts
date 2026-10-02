@@ -1,16 +1,9 @@
 import { flag } from "flags/next";
 import { vercelAdapter } from "@flags-sdk/vercel";
 
-export const whoWeAreFlag = flag<boolean>({
-  key: "who-we-are",
+export const mvpFlag = flag<boolean>({
+  key: "mvp",
   description:
-    "Show the 'Quem somos' section on the homepage (hidden until full site launch)",
-  adapter: vercelAdapter,
-});
-
-export const historyFlag = flag<boolean>({
-  key: "history",
-  description:
-    "Show the 'A nossa história' section on the homepage (hidden until full site launch)",
+    "Show the MVP homepage sections (Quem somos, A nossa história, ...) — hidden until full site launch",
   adapter: vercelAdapter,
 });
