@@ -1,15 +1,20 @@
+import { Flame, Send, Users } from "lucide-react";
+
 const PILLARS = [
   {
     title: "Adoração",
     text: "Reunimo-nos para exaltar a Cristo com sinceridade, em oração, louvor e Palavra.",
+    icon: Flame,
   },
   {
     title: "Comunhão",
     text: "Somos uma família. Ninguém deve caminhar sozinho na fé nem na vida.",
+    icon: Users,
   },
   {
     title: "Missão",
     text: "Levamos o evangelho à nossa cidade e apoiamos a obra missionária além dela.",
+    icon: Send,
   },
 ];
 
@@ -47,14 +52,22 @@ export function WhoWeAre() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden border bg-border md:grid-cols-3">
-          {PILLARS.map((p) => (
-            <div key={p.title} className="bg-background p-8 md:p-10">
-              <h3 className="font-display text-xl uppercase tracking-tight text-primary">
-                {p.title}
-              </h3>
-              <p className="mt-4 text-muted-foreground">{p.text}</p>
-            </div>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {PILLARS.map(({ title, text, icon: Icon }) => (
+            <article
+              key={title}
+              className="flex flex-col overflow-hidden rounded-2xl border bg-background transition-shadow duration-300 hover:shadow-[var(--shadow-lift)]"
+            >
+              <div className="flex h-36 items-center justify-center bg-surface md:h-40">
+                <Icon className="h-14 w-14 text-primary" strokeWidth={1.25} aria-hidden="true" />
+              </div>
+              <div className="flex flex-1 flex-col p-8">
+                <h3 className="font-display text-xl uppercase tracking-tight text-primary">
+                  {title}
+                </h3>
+                <p className="mt-4 text-muted-foreground">{text}</p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
