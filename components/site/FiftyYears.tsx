@@ -1,40 +1,42 @@
 export function FiftyYears() {
   return (
-    <section
-      id="meio-seculo"
-      className="relative overflow-hidden bg-ink py-24 text-white md:py-32"
-    >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full opacity-25 blur-3xl"
-        style={{ background: "var(--gradient-ember)" }}
-      />
-
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-24">
-        <div className="flex items-baseline gap-3">
-          <span className="text-gradient-ember font-display text-[9rem] font-extrabold leading-none tracking-tighter sm:text-[12rem] lg:text-[16rem]">
-            50
-          </span>
-          <span className="text-gradient-ember font-display text-6xl font-extrabold leading-none sm:text-8xl">
-            +
-          </span>
-          <span className="sr-only">anos</span>
+    <section id="historia" className="bg-ink py-20 text-white md:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)] lg:gap-20">
+        <div>
+          <p
+            aria-label="50 mais"
+            className="flex items-start font-display font-black leading-[0.72]"
+          >
+            <span
+              aria-hidden="true"
+              className="text-gradient-ember -mb-[0.2em] pb-[0.2em] text-[7rem] sm:text-[9rem]"
+            >
+              50
+            </span>
+            <span
+              aria-hidden="true"
+              className="text-[3.5rem] text-white sm:text-[4.5rem]"
+            >
+              +
+            </span>
+          </p>
+          <p className="eyebrow mt-4">anos de igreja</p>
         </div>
 
         <div>
-          <p className="eyebrow">Há mais de 50 anos</p>
-          <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[1.1] sm:text-5xl lg:text-6xl">
-            Meio século ao serviço{" "}
-            <span className="text-gradient-ember">da comunidade</span>
+          <p className="eyebrow">A nossa história</p>
+          <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[0.95] sm:text-5xl">
+            Meio século ao serviço da{" "}
+            <span className="text-gradient-ember">comunidade</span>
           </h2>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/70">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
             Há mais de cinquenta anos que a Assembleia de Deus de Vila Chã
-            caminha ao lado das famílias de Vila do Conde e região: em
-            celebração, em oração e no serviço ao próximo.{" "}
-            <span className="text-white">
-              Cada geração que passou por aqui deixou-nos um legado de fé que
-              queremos continuar a viver.
-            </span>
+            caminha ao lado da comunidade e das famílias: em celebração, em
+            oração e no serviço ao próximo. Mudaram as gerações e os lugares, a
+            missão é a mesma.
+          </p>
+          <p className="mt-6 font-display text-xs font-extrabold uppercase tracking-[0.22em] text-white/50">
+            Vila Chã · Vila do Conde · Barcelos
           </p>
         </div>
       </div>
