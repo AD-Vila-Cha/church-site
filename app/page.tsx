@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
+import { WhoWeAre } from "@/components/site/WhoWeAre";
 
 const LOCATIONS = [
   {
@@ -82,6 +83,8 @@ export default function Home() {
             Fale connosco
           </a>
         </div>
+
+        <WhoWeAre />
 
         <section className="border-t py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
