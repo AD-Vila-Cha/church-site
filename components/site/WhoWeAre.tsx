@@ -38,8 +38,11 @@ export function WhoWeAre() {
             </p>
             <p>
               Não somos um edifício, somos pessoas comuns transformadas pela
-              graça de Deus. Venha como está: encontrará uma casa aberta, uma
-              mensagem clara e alguém disposto a caminhar consigo.
+              graça de Deus.{" "}
+              <span className="highlight-marker text-foreground">
+                Venha como está: encontrará uma casa aberta, uma mensagem
+                clara e alguém disposto a caminhar consigo.
+              </span>
             </p>
           </div>
         </div>
