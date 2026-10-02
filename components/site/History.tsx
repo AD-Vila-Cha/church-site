@@ -1,4 +1,4 @@
-export function FiftyYears() {
+export function History() {
   return (
     <section id="historia" className="bg-ink py-20 text-white md:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[minmax(0,auto)_minmax(0,1fr)] lg:gap-20">

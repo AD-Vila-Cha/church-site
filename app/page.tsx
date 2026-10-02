@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
-import { FiftyYears } from "@/components/site/FiftyYears";
+import { History } from "@/components/site/History";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
-import { fiftyYearsFlag, whoWeAreFlag } from "@/flags";
+import { historyFlag, whoWeAreFlag } from "@/flags";
 
 const LOCATIONS = [
   {
@@ -47,9 +47,9 @@ const SOCIALS = [
 ];
 
 export default async function Home() {
-  const [showWhoWeAre, showFiftyYears] = await Promise.all([
+  const [showWhoWeAre, showHistory] = await Promise.all([
     whoWeAreFlag(),
-    fiftyYearsFlag(),
+    historyFlag(),
   ]);
 
   return (
@@ -93,7 +93,7 @@ export default async function Home() {
 
         {showWhoWeAre && <WhoWeAre />}
 
-        {showFiftyYears && <FiftyYears />}
+        {showHistory && <History />}
 
         <section className="border-t py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
