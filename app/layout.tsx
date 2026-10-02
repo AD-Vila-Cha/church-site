@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { VercelToolbar } from "@vercel/toolbar/next";
 import "./globals.css";
 
 const montserratDisplay = Montserrat({
@@ -21,9 +22,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // On Vercel, the toolbar is auto-injected in preview deployments.
+  // This manual injection is only needed for local development.
+  const shouldInjectToolbar = process.env.NODE_ENV === "development";
+
   return (
     <html lang="pt" className={`${montserratDisplay.variable} ${montserratSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {shouldInjectToolbar && <VercelToolbar />}
+      </body>
     </html>
   );
 }
