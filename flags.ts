@@ -7,3 +7,10 @@ export const whoWeAreFlag = flag<boolean>({
     "Show the 'Quem somos' section on the homepage (hidden until full site launch)",
   adapter: vercelAdapter,
 });
+
+export const fiftyYearsFlag = flag<boolean>({
+  key: "fifty-years",
+  description:
+    "Show the 'Meio século ao serviço da comunidade' section on the homepage (hidden until full site launch)",
+  adapter: vercelAdapter,
+});

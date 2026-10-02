@@ -16,6 +16,7 @@
   --color-border: var(--border);
   --color-gold: var(--gold);
   --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
 }
 
 :root {
@@ -25,6 +26,8 @@
   --background: #ffffff;
   --foreground: #444444;
   --surface: rgb(68 68 68 / 4%);
+  /* Deep neutral derived from the brand dark gray (#444444) for dark bands */
+  --ink: #1c1c1c;
   --gold: #e6b922;
   --gold-deep: #d06f29;
   --primary: var(--gold-deep);
