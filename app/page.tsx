@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
+import { History } from "@/components/site/History";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
-import { whoWeAreFlag } from "@/flags";
+import { historyFlag, whoWeAreFlag } from "@/flags";
 
 const LOCATIONS = [
   {
@@ -46,7 +47,10 @@ const SOCIALS = [
 ];
 
 export default async function Home() {
-  const showWhoWeAre = await whoWeAreFlag();
+  const [showWhoWeAre, showHistory] = await Promise.all([
+    whoWeAreFlag(),
+    historyFlag(),
+  ]);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -88,6 +92,8 @@ export default async function Home() {
         </div>
 
         {showWhoWeAre && <WhoWeAre />}
+
+        {showHistory && <History />}
 
         <section className="border-t py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
