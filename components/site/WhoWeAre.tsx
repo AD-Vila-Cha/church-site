@@ -32,9 +32,9 @@ export function WhoWeAre() {
             <p>
               A Assembleia de Deus de Vila Chã é uma comunidade evangélica
               pentecostal ao serviço das pessoas do concelho de Vila do Conde
-              e arredores. Existimos para que homens, mulheres e crianças
-              conheçam Jesus Cristo, cresçam à Sua semelhança e vivam uma fé
-              que se vê no dia a dia.
+              e região há mais de cinquenta anos. Existimos para que homens,
+              mulheres e crianças conheçam Jesus Cristo, cresçam à Sua
+              semelhança e vivam uma fé que se vê no dia a dia.
             </p>
             <p>
               Não somos um edifício, somos pessoas comuns transformadas pela
