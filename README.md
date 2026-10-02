@@ -8,6 +8,7 @@ New to this repo? Start here, then read [`AGENTS.md`](./AGENTS.md) for the full 
 
 - **Miro board** (purpose, story map, architecture, milestones): https://miro.com/app/board/uXjVH7XdFMc=/
 - **Design prototype** (Lovable — Dark & Light MVP directions): https://lovable.dev/projects/dbfc75e7-0e44-4531-9cde-f6356bfa8d24
+- **Brand standards** (logo, color palette, typography): [`docs/BRAND.md`](./docs/BRAND.md)
 - Tasks are tracked as **GitHub issues** on this repo.
 
 ## Tech stack

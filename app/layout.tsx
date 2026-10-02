@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Archivo, Barlow } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
+const montserratDisplay = Montserrat({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["700", "800"],
 });
 
-const barlow = Barlow({
+const montserratSans = Montserrat({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt" className={`${archivo.variable} ${barlow.variable}`}>
+    <html lang="pt" className={`${montserratDisplay.variable} ${montserratSans.variable}`}>
       <body>{children}</body>
     </html>
   );

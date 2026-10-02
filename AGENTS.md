@@ -21,6 +21,8 @@ The site is the church's digital front door: increase reach (findability, minist
 
 A design prototype (Dark + Light MVP directions) exists in Lovable: https://lovable.dev/projects/dbfc75e7-0e44-4531-9cde-f6356bfa8d24 — check it before building new UI so components match the agreed direction.
 
+Brand standards (logo usage, color palette, typography) are documented in [`docs/BRAND.md`](./docs/BRAND.md) — this is the source of truth for colors and fonts, taking precedence over the Lovable prototype where they conflict.
+
 ## Git workflow
 
 Tasks are tracked as **GitHub issues** on this repo. Every branch and commit ties back to a task.
