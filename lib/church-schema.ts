@@ -10,7 +10,8 @@ export function churchJsonLd() {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Church",
+    // `Church` is only a Place in schema.org; `Organization` is what allows `email` and `location`.
+    "@type": ["Organization", "Church"],
     name: "Assembleia de Deus de Vila Chã",
     url,
     logo: `${url}/logo-icon.png`,
