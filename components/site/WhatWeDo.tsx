@@ -72,7 +72,7 @@ export function WhatWeDo() {
           <div>
             <p className="eyebrow">O que fazemos</p>
             <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[0.95] sm:text-5xl lg:text-6xl">
-              Ministérios para cada fase da vida
+              Ministérios
             </h2>
           </div>
 
