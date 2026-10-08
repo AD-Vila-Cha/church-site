@@ -7,6 +7,7 @@ const POSTER = "/hero/hero-poster.jpg";
 // Sunday celebrations of the main location, surfaced right in the hero.
 const MAIN_LOCATION = LOCATIONS[0];
 const SUNDAY_TIMES = MAIN_LOCATION.services.filter((s) => s.day === "Dom").map((s) => s.time);
+const OTHER_LOCATIONS = LOCATIONS.slice(1).map((l) => l.city).join(" e ");
 
 export function Hero() {
   return (
@@ -68,12 +69,14 @@ export function Hero() {
             </p>
             <p className="text-foreground/70">{MAIN_LOCATION.city}</p>
           </div>
-          <a
-            href="#onde-estamos"
-            className="font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary hover:underline"
-          >
-            Todos os horários →
-          </a>
+          {OTHER_LOCATIONS && (
+            <a
+              href="#onde-estamos"
+              className="font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary hover:underline"
+            >
+              Também em {OTHER_LOCATIONS} →
+            </a>
+          )}
         </div>
       </div>
     </section>
