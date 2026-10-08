@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[calc(100svh-6.6rem)] w-full overflow-hidden md:min-h-[calc(100svh-8.1rem)]"
+      className="relative min-h-svh w-full overflow-hidden"
     >
       <Image
         src={POSTER}
@@ -23,9 +23,11 @@ export function Hero() {
       {/* Wash that keeps the text readable while letting the footage show on the right. */}
       <div className="absolute inset-0 bg-background/55 md:bg-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/55 to-background/10 max-md:hidden" />
+      {/* Keeps the dark logo and header over the footage readable. */}
+      <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[inherit] max-w-7xl flex-col justify-end px-5 pb-20 pt-24 md:px-8 md:pb-28">
+      <div className="relative mx-auto flex min-h-[inherit] max-w-7xl flex-col justify-end px-5 pb-20 pt-40 md:px-8 md:pb-28">
         <p className="eyebrow">Assembleia de Deus · Vila Chã</p>
         <h1 className="mt-5 max-w-4xl text-5xl leading-[0.92] uppercase sm:text-7xl lg:text-8xl">
           Há lugar
@@ -45,9 +47,9 @@ export function Hero() {
           </a>
           <a
             href="#quem-somos"
-            className="inline-flex items-center justify-center border border-border bg-background/60 px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
+            className="inline-flex items-center px-2 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground underline decoration-primary decoration-2 underline-offset-8 transition-colors hover:text-primary"
           >
-            Quem somos
+            Quem somos →
           </a>
         </div>
       </div>

@@ -33,8 +33,9 @@ export default async function Home() {
   const showMvp = await mvpFlag();
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <header className="border-b">
+    <div className="relative flex min-h-screen flex-col bg-background">
+      {/* With the MVP hero the header floats over the video; otherwise it is a plain bar. */}
+      <header className={showMvp ? "absolute inset-x-0 top-0 z-20" : "border-b"}>
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
           <img
             src="/cross-logo.svg"
