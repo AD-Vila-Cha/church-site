@@ -49,6 +49,17 @@
     overflow-x: hidden;
   }
 
+  /* Leave room for the sticky header when jumping to an anchor. */
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     min-height: 100%;
     background-color: var(--color-background);
