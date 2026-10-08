@@ -1,5 +1,6 @@
-import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { History } from "@/components/site/History";
+import { Facebook, Instagram, Youtube } from "@/components/site/SocialIcons";
 import { WhatWeDo } from "@/components/site/WhatWeDo";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
 import { mvpFlag } from "@/flags";
