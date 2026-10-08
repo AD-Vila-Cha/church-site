@@ -11,8 +11,6 @@ const LINKS = [
   { href: "#contactos", label: "Contactos" },
 ];
 
-const CTA = { href: "#onde-estamos", label: "Planeie a sua visita" };
-
 // Sticky header: transparent over the hero, solid and compact once scrolled.
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,25 +53,17 @@ export function Header() {
           <Brand compact={scrolled} />
         </a>
 
-        <div className="hidden items-center gap-9 lg:flex">
-          <nav aria-label="Principal" className="flex items-center gap-9">
-            {LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="font-display text-xs font-bold uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href={CTA.href}
-            className="inline-flex items-center justify-center bg-primary px-5 py-3 font-display text-xs font-extrabold uppercase tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            {CTA.label}
-          </a>
-        </div>
+        <nav aria-label="Principal" className="hidden items-center gap-9 lg:flex">
+          {LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="font-display text-xs font-bold uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary"
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
 
         <button
           type="button"
@@ -103,13 +93,6 @@ export function Header() {
               {l.label}
             </a>
           ))}
-          <a
-            href={CTA.href}
-            onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground"
-          >
-            {CTA.label}
-          </a>
         </nav>
       )}
     </header>
