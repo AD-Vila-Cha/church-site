@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { MapPin } from "lucide-react";
 import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
 import { Header } from "@/components/site/Header";
@@ -30,6 +31,28 @@ const LOCATIONS = [
     ],
   },
 ];
+
+const MVP_TITLE = "AD Vila Chã | Igreja Evangélica em Vila do Conde";
+const MVP_DESCRIPTION =
+  "Assembleia de Deus de Vila Chã, igreja evangélica em Vila do Conde e Barcelos: quem somos, ministérios, horários dos cultos e contactos.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  // Coming-soon metadata comes from the root layout.
+  if (!(await mvpFlag())) return {};
+
+  return {
+    title: MVP_TITLE,
+    description: MVP_DESCRIPTION,
+    openGraph: {
+      type: "website",
+      locale: "pt_PT",
+      siteName: "Assembleia de Deus de Vila Chã",
+      title: MVP_TITLE,
+      description: MVP_DESCRIPTION,
+    },
+    twitter: { card: "summary_large_image", title: MVP_TITLE, description: MVP_DESCRIPTION },
+  };
+}
 
 export default async function Home() {
   const showMvp = await mvpFlag();

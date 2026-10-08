@@ -15,10 +15,18 @@ const montserratSans = Montserrat({
   weight: ["400", "500", "600"],
 });
 
+// Defaults used while the MVP is gated (coming-soon page). `app/page.tsx`
+// overrides them when the `mvp` flag is on.
 export const metadata: Metadata = {
   title: "AD Vila Chã | Em breve",
   description:
     "Assembleia de Deus de Vila Chã: o novo site está a caminho. Em breve com toda a informação sobre a nossa igreja.",
+  openGraph: {
+    type: "website",
+    locale: "pt_PT",
+    siteName: "Assembleia de Deus de Vila Chã",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
