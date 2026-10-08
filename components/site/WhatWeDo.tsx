@@ -28,7 +28,7 @@ const MINISTRIES = [
   },
 ];
 
-const AUTOPLAY_MS = 5500;
+const AUTOPLAY_MS = 7500;
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -36,10 +36,18 @@ export function WhatWeDo() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  // Once the visitor drives the carousel themselves, autoplay stays off.
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    setHasInteracted(true);
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    setHasInteracted(true);
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -60,10 +68,19 @@ export function WhatWeDo() {
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi || isPaused || reduceMotion) return;
+    if (!emblaApi) return;
+    const onDrag = () => setHasInteracted(true);
+    emblaApi.on("pointerDown", onDrag);
+    return () => {
+      emblaApi.off("pointerDown", onDrag);
+    };
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi || isPaused || hasInteracted || reduceMotion) return;
     const timer = window.setInterval(() => emblaApi.scrollNext(), AUTOPLAY_MS);
     return () => window.clearInterval(timer);
-  }, [emblaApi, isPaused, reduceMotion]);
+  }, [emblaApi, isPaused, hasInteracted, reduceMotion]);
 
   return (
     <section id="o-que-fazemos" className="border-t bg-surface py-24 md:py-32">
@@ -108,7 +125,8 @@ export function WhatWeDo() {
           role="region"
           aria-roledescription="carousel"
           aria-label="Ministérios da AD Vila Chã"
-          className="mt-12"
+          tabIndex={0}
+          className="mt-12 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
@@ -176,7 +194,10 @@ export function WhatWeDo() {
               type="button"
               aria-label={`Ver ${m.name}`}
               aria-current={current === index ? "true" : undefined}
-              onClick={() => emblaApi?.scrollTo(index)}
+              onClick={() => {
+                setHasInteracted(true);
+                emblaApi?.scrollTo(index);
+              }}
               className="flex h-8 w-8 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               <span
