@@ -1,4 +1,6 @@
 import { MapPin } from "lucide-react";
+import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
+import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
 import { ComingSoon } from "@/components/site/ComingSoon";
@@ -34,26 +36,7 @@ export default async function Home() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
-      {/* With the MVP hero the header floats over the video; otherwise it is a plain bar. */}
-      <header className={showMvp ? "absolute inset-x-0 top-0 z-20" : "border-b"}>
-        <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
-          <img
-            src="/cross-logo.svg"
-            alt=""
-            width={117.75}
-            height={202.5}
-            className="h-14 w-auto shrink-0 object-contain md:h-20"
-          />
-          <div className="flex flex-col leading-tight">
-            <span className="font-display text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground md:text-xs">
-              Assembleia de Deus
-            </span>
-            <span className="font-display text-xl font-extrabold uppercase tracking-wide md:text-3xl">
-              Vila Chã
-            </span>
-          </div>
-        </div>
-      </header>
+      {showMvp ? <Header /> : <ComingSoonHeader />}
 
       <main className="flex flex-1 flex-col">
         {showMvp ? (
