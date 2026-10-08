@@ -47,9 +47,9 @@ export function Hero() {
           </a>
           <a
             href="#quem-somos"
-            className="inline-flex items-center px-2 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground underline decoration-primary decoration-2 underline-offset-8 transition-colors hover:text-primary"
+            className="inline-flex items-center justify-center bg-foreground px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
           >
-            Quem somos →
+            Quem somos
           </a>
         </div>
       </div>
