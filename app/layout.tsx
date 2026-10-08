@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import "./globals.css";
+import { getSiteUrl } from "@/lib/site";
 
 const montserratDisplay = Montserrat({
   variable: "--font-display",
@@ -18,6 +19,7 @@ const montserratSans = Montserrat({
 // Defaults used while the MVP is gated (coming-soon page). `app/page.tsx`
 // overrides them when the `mvp` flag is on.
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: "AD Vila Chã | Em breve",
   description:
     "Assembleia de Deus de Vila Chã: o novo site está a caminho. Em breve com toda a informação sobre a nossa igreja.",
@@ -35,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const shouldInjectToolbar = process.env.NODE_ENV === "development";
 
   return (
-    <html lang="pt" className={`${montserratDisplay.variable} ${montserratSans.variable}`}>
+    <html lang="pt-PT" className={`${montserratDisplay.variable} ${montserratSans.variable}`}>
       <body>
         {children}
         {shouldInjectToolbar && <VercelToolbar />}

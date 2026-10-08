@@ -10,6 +10,7 @@ import { ComingSoonFooter, Footer } from "@/components/site/Footer";
 import { WhatWeDo } from "@/components/site/WhatWeDo";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
 import { mvpFlag } from "@/flags";
+import { churchJsonLd } from "@/lib/church-schema";
 
 const MVP_TITLE = "AD Vila Chã | Igreja Evangélica em Vila do Conde";
 const MVP_DESCRIPTION =
@@ -22,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: MVP_TITLE,
     description: MVP_DESCRIPTION,
+    alternates: { canonical: "/" },
     openGraph: {
       type: "website",
       locale: "pt_PT",
@@ -38,6 +40,12 @@ export default async function Home() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(churchJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       {showMvp ? <Header /> : <ComingSoonHeader />}
 
       <main className="flex flex-1 flex-col">
