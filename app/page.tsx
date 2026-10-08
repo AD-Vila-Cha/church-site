@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
+import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
-import { CONTACT_EMAIL } from "@/components/site/contact";
+import { ComingSoon } from "@/components/site/ComingSoon";
 import { ComingSoonFooter, Footer } from "@/components/site/Footer";
 import { WhatWeDo } from "@/components/site/WhatWeDo";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
@@ -32,8 +33,9 @@ export default async function Home() {
   const showMvp = await mvpFlag();
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <header className="border-b">
+    <div className="relative flex min-h-screen flex-col bg-background">
+      {/* With the MVP hero the header floats over the video; otherwise it is a plain bar. */}
+      <header className={showMvp ? "absolute inset-x-0 top-0 z-20" : "border-b"}>
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-5 py-6 md:px-8">
           <img
             src="/cross-logo.svg"
@@ -54,31 +56,18 @@ export default async function Home() {
       </header>
 
       <main className="flex flex-1 flex-col">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-start px-5 py-16 md:px-8">
-          <h1 className="max-w-3xl text-5xl uppercase leading-[1.1] sm:text-6xl md:text-7xl">
-            O novo site está <span className="text-gradient-ember">quase aí</span>.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Estamos a preparar um novo espaço digital para a nossa igreja. Em
-            breve com tudo sobre quem somos, o que fazemos e onde nos encontrar.
-          </p>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="mt-10 inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Fale connosco
-          </a>
-        </div>
-
-        {showMvp && (
+        {showMvp ? (
           <>
+            <Hero />
             <WhoWeAre />
             <History />
             <WhatWeDo />
           </>
+        ) : (
+          <ComingSoon />
         )}
 
-        <section className="border-t py-20 md:py-24">
+        <section id="onde-estamos" className="border-t py-20 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <p className="eyebrow">Onde estamos</p>
             <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[1.1] sm:text-5xl">
