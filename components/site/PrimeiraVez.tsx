@@ -41,8 +41,8 @@ export function PrimeiraVez() {
   return (
     <section id="primeira-vez" className="border-t py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-20">
-          <div>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-x-20 lg:gap-y-8">
+          <div className="lg:col-start-1 lg:row-start-1">
             <p className="eyebrow">Primeira vez?</p>
             <h2 className="mt-5 text-4xl uppercase leading-[1.1] sm:text-5xl lg:text-6xl">
               Sinta-se
@@ -61,7 +61,7 @@ export function PrimeiraVez() {
             </a>
           </div>
 
-          <dl className="grid gap-6 sm:grid-cols-2">
+          <dl className="grid gap-6 sm:grid-cols-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             {FAQS.map(({ question, answer, icon: Icon }) => (
               <div
                 key={question}
@@ -75,18 +75,18 @@ export function PrimeiraVez() {
               </div>
             ))}
           </dl>
-        </div>
 
-        <ul className="mt-12 grid gap-x-6 gap-y-5 border-t pt-8 sm:grid-cols-2 lg:grid-cols-4">
-          {AMENITIES.map(({ label, icon: Icon }) => (
-            <li key={label} className="flex items-center gap-3 text-foreground">
-              <Icon className="h-6 w-6 shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
-              <span className="font-display text-xs font-bold uppercase tracking-[0.14em]">
-                {label}
-              </span>
-            </li>
-          ))}
-        </ul>
+          <ul className="grid content-start gap-x-6 gap-y-5 border-t pt-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-2 lg:grid-cols-1 lg:gap-y-4 lg:pt-6">
+            {AMENITIES.map(({ label, icon: Icon }) => (
+              <li key={label} className="flex items-center gap-3 text-foreground">
+                <Icon className="h-6 w-6 shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                <span className="font-display text-xs font-bold uppercase tracking-[0.14em]">
+                  {label}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
