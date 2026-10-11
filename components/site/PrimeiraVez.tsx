@@ -31,10 +31,10 @@ const FAQS: Faq[] = [
 
 // PLACEHOLDER: confirm which of these are true for each location.
 const AMENITIES: { label: string; icon: LucideIcon }[] = [
-  { label: "Estacionamento gratuito", icon: Car },
-  { label: "Acessível a cadeira de rodas", icon: Accessibility },
-  { label: "Espaço para crianças", icon: Baby },
-  { label: "Perto de transportes públicos", icon: Bus },
+  { label: "Estacionamento", icon: Car },
+  { label: "Acessível", icon: Accessibility },
+  { label: "Espaço infantil", icon: Baby },
+  { label: "Transportes", icon: Bus },
 ];
 
 export function PrimeiraVez() {
@@ -76,13 +76,14 @@ export function PrimeiraVez() {
             ))}
           </dl>
 
-          <ul className="grid content-start gap-x-6 gap-y-5 border-t pt-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-2 lg:grid-cols-1 lg:gap-y-4 lg:pt-6">
+          <ul className="flex flex-wrap content-start gap-2.5 lg:col-start-1 lg:row-start-2">
             {AMENITIES.map(({ label, icon: Icon }) => (
-              <li key={label} className="flex items-center gap-3 text-foreground">
-                <Icon className="h-6 w-6 shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
-                <span className="font-display text-xs font-bold uppercase tracking-[0.14em]">
-                  {label}
-                </span>
+              <li
+                key={label}
+                className="flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm text-foreground"
+              >
+                <Icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.75} aria-hidden="true" />
+                {label}
               </li>
             ))}
           </ul>
