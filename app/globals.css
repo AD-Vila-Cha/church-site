@@ -64,6 +64,14 @@
     }
   }
 
+  /*
+   * Sections carry their own top padding, so land a little inside them: the
+   * heading then sits close under the header instead of after a blank band.
+   */
+  main > section[id]:not(#top) {
+    scroll-margin-top: -3rem;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
