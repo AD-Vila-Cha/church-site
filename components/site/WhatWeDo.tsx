@@ -83,9 +83,9 @@ export function WhatWeDo() {
   }, [emblaApi, isPaused, hasInteracted, reduceMotion]);
 
   return (
-    <section id="o-que-fazemos" className="border-t bg-surface py-24 md:py-32">
+    <section id="o-que-fazemos" className="border-t bg-surface py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
           <div>
             <p className="eyebrow">O que fazemos</p>
             <h2 className="mt-5 max-w-2xl text-4xl uppercase leading-[0.95] sm:text-5xl lg:text-6xl">
@@ -126,7 +126,7 @@ export function WhatWeDo() {
           aria-roledescription="carousel"
           aria-label="Ministérios da AD Vila Chã"
           tabIndex={0}
-          className="mt-12 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          className="mt-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:mt-12"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
@@ -156,7 +156,7 @@ export function WhatWeDo() {
                   aria-label={`${index + 1} de ${MINISTRIES.length}: ${m.name}`}
                   className="min-w-0 shrink-0 grow-0 basis-[94%] pl-3 md:basis-[82%] md:pl-6 lg:basis-[72%]"
                 >
-                  <article className="group relative h-[29rem] overflow-hidden rounded-2xl text-primary-foreground sm:h-[34rem] lg:h-[40rem]">
+                  <article className="group relative h-[29rem] overflow-hidden rounded-2xl text-primary-foreground sm:h-[34rem] max-h-[calc(100svh-23rem)] min-h-[20rem] md:max-h-[calc(100svh-22rem)] md:min-h-[24rem] lg:h-[40rem]">
                     <Image
                       src={m.image}
                       alt=""
