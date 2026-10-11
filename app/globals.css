@@ -49,9 +49,27 @@
     overflow-x: hidden;
   }
 
-  /* Leave room for the sticky header when jumping to an anchor. */
+  /*
+   * Leave room for the sticky header when jumping to an anchor. Matches the
+   * compact (scrolled) header in components/site/Header.tsx: logo + py-3 + 1px
+   * border. Update both together.
+   */
   html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: calc(4rem + 1px);
+  }
+
+  @media (min-width: 48rem) {
+    html {
+      scroll-padding-top: calc(4.5rem + 1px);
+    }
+  }
+
+  /*
+   * Sections carry their own top padding, so land a little inside them: the
+   * heading then sits close under the header instead of after a blank band.
+   */
+  main > section[id]:not(#top) {
+    scroll-margin-top: -3rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
