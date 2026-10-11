@@ -77,7 +77,7 @@ export function PrimeiraVez() {
             ))}
           </dl>
 
-          <ul className="grid content-start gap-x-6 gap-y-5 border-t pt-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-2 lg:grid-cols-1 lg:gap-y-4 lg:pt-6">
+          <ul className="grid content-start gap-x-6 gap-y-5 sm:border-t sm:pt-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-2 lg:grid-cols-1 lg:gap-y-4 lg:pt-6">
             {AMENITIES.map(({ label, icon: Icon, repeatsCard }) => (
               <li
                 key={label}
