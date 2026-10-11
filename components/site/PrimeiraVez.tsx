@@ -30,11 +30,12 @@ const FAQS: Faq[] = [
 ];
 
 // PLACEHOLDER: confirm which of these are true for each location.
-const AMENITIES: { label: string; icon: LucideIcon }[] = [
-  { label: "Estacionamento", icon: Car },
-  { label: "Acessível", icon: Accessibility },
-  { label: "Espaço infantil", icon: Baby },
-  { label: "Transportes", icon: Bus },
+// `repeatsCard` items echo a Q&A card above, so they are hidden on phones to save space.
+const AMENITIES: { label: string; icon: LucideIcon; repeatsCard?: boolean }[] = [
+  { label: "Estacionamento gratuito", icon: Car, repeatsCard: true },
+  { label: "Acessível a cadeira de rodas", icon: Accessibility },
+  { label: "Espaço para crianças", icon: Baby, repeatsCard: true },
+  { label: "Perto de transportes públicos", icon: Bus },
 ];
 
 export function PrimeiraVez() {
@@ -76,14 +77,16 @@ export function PrimeiraVez() {
             ))}
           </dl>
 
-          <ul className="flex flex-wrap content-start gap-2.5 lg:col-start-1 lg:row-start-2">
-            {AMENITIES.map(({ label, icon: Icon }) => (
+          <ul className="grid content-start gap-x-6 gap-y-5 border-t pt-8 sm:grid-cols-2 lg:col-start-1 lg:row-start-2 lg:grid-cols-1 lg:gap-y-4 lg:pt-6">
+            {AMENITIES.map(({ label, icon: Icon, repeatsCard }) => (
               <li
                 key={label}
-                className="flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm text-foreground"
+                className={`items-center gap-3 text-foreground ${repeatsCard ? "hidden sm:flex" : "flex"}`}
               >
-                <Icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.75} aria-hidden="true" />
-                {label}
+                <Icon className="h-6 w-6 shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
+                <span className="font-display text-xs font-bold uppercase tracking-[0.14em]">
+                  {label}
+                </span>
               </li>
             ))}
           </ul>
