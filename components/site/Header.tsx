@@ -7,6 +7,7 @@ import { Brand } from "@/components/site/Brand";
 const LINKS = [
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#o-que-fazemos", label: "O Que Fazemos" },
+  { href: "#primeira-vez", label: "Primeira Vez?" },
   { href: "#onde-estamos", label: "Onde Estamos" },
   { href: "#contactos", label: "Contactos" },
 ];

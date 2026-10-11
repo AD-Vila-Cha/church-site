@@ -4,6 +4,7 @@ import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
+import { PrimeiraVez } from "@/components/site/PrimeiraVez";
 import { LOCATIONS } from "@/components/site/locations";
 import { ComingSoon } from "@/components/site/ComingSoon";
 import { ComingSoonFooter, Footer } from "@/components/site/Footer";
@@ -55,6 +56,7 @@ export default async function Home() {
             <WhoWeAre />
             <History />
             <WhatWeDo />
+            <PrimeiraVez />
           </>
         ) : (
           <ComingSoon />
