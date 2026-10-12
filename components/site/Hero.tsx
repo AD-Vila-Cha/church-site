@@ -12,7 +12,6 @@ const SHARED_SUNDAY_TIMES = sundayTimes(MAIN_LOCATIONS[0].services).filter((time
   MAIN_LOCATIONS.every((loc) => sundayTimes(loc.services).includes(time)),
 );
 const MAIN_CITIES = MAIN_LOCATIONS.map((l) => l.city).join(" e ");
-const OTHER_LOCATIONS = LOCATIONS.slice(2).map((l) => l.city).join(" e ");
 
 export function Hero() {
   return (
@@ -74,14 +73,12 @@ export function Hero() {
             </p>
             <p className="text-foreground/70">{MAIN_CITIES}</p>
           </div>
-          {OTHER_LOCATIONS && (
-            <a
-              href="#onde-estamos"
-              className="font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary hover:underline"
-            >
-              Também em {OTHER_LOCATIONS} →
-            </a>
-          )}
+          <a
+            href="#onde-estamos"
+            className="font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary hover:underline"
+          >
+            Encontre a mais perto de si →
+          </a>
         </div>
       </div>
     </section>
