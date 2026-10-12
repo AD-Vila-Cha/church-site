@@ -30,24 +30,16 @@ export function ComingSoonFooter() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center gap-2 md:items-end">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Assembleia de Deus de Vila Chã
-          </p>
-          <Link
-            href="/politica-de-privacidade"
-            className="text-sm text-muted-foreground transition-colors hover:text-primary"
-          >
-            Política de Privacidade
-          </Link>
-        </div>
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Assembleia de Deus de Vila Chã
+        </p>
       </div>
     </footer>
   );
 }
 
 // Full "Contactos" block + footer (contact details and social links).
-export function Footer() {
+export function Footer({ showPrivacyLink = false }: { showPrivacyLink?: boolean }) {
   return (
     <footer id="contactos" className="border-t bg-surface">
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
@@ -149,12 +141,14 @@ export function Footer() {
             <p className="mt-2 text-sm text-muted-foreground">
               © {new Date().getFullYear()} Assembleia de Deus de Vila Chã
             </p>
-            <Link
-              href="/politica-de-privacidade"
-              className="mt-1 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
-            >
-              Política de Privacidade
-            </Link>
+            {showPrivacyLink && (
+              <Link
+                href="/politica-de-privacidade"
+                className="mt-1 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Política de Privacidade
+              </Link>
+            )}
           </div>
         </div>
       </div>

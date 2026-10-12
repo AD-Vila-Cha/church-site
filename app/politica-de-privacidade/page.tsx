@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
 import { ComingSoonFooter } from "@/components/site/Footer";
+import { isPrivacyPolicyVisible } from "@/lib/privacy-flag";
 import { POLICY_INTRO, POLICY_SECTIONS, POLICY_UPDATED } from "@/lib/privacy-policy";
 
 export const metadata: Metadata = {
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-export default function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage() {
+  if (!(await isPrivacyPolicyVisible())) notFound();
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <ComingSoonHeader />

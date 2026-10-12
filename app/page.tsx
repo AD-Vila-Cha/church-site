@@ -12,6 +12,7 @@ import { WhatWeDo } from "@/components/site/WhatWeDo";
 import { WhoWeAre } from "@/components/site/WhoWeAre";
 import { mvpFlag } from "@/flags";
 import { churchJsonLd } from "@/lib/church-schema";
+import { isPrivacyPolicyVisible } from "@/lib/privacy-flag";
 
 const MVP_TITLE = "AD Vila Chã | Igreja Evangélica em Vila do Conde";
 const MVP_DESCRIPTION =
@@ -38,6 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const showMvp = await mvpFlag();
+  const showPrivacyLink = await isPrivacyPolicyVisible();
 
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
@@ -121,7 +123,7 @@ export default async function Home() {
         </section>
       </main>
 
-      {showMvp ? <Footer /> : <ComingSoonFooter />}
+      {showMvp ? <Footer showPrivacyLink={showPrivacyLink} /> : <ComingSoonFooter />}
     </div>
   );
 }
