@@ -5,7 +5,7 @@ import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
 import { PrimeiraVez } from "@/components/site/PrimeiraVez";
-import { LOCATIONS } from "@/components/site/locations";
+import { visibleLocations } from "@/components/site/locations";
 import { ComingSoon } from "@/components/site/ComingSoon";
 import { ComingSoonFooter, Footer } from "@/components/site/Footer";
 import { WhatWeDo } from "@/components/site/WhatWeDo";
@@ -44,7 +44,7 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(churchJsonLd()).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(churchJsonLd(showMvp)).replace(/</g, "\\u003c"),
         }}
       />
       {showMvp ? <Header /> : <ComingSoonHeader />}
@@ -70,7 +70,7 @@ export default async function Home() {
             </h2>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {LOCATIONS.map((loc) => (
+              {visibleLocations(showMvp).map((loc) => (
                 <div key={loc.city} className="surface-card p-8 md:p-10">
                   <h3 className="font-display text-3xl uppercase text-foreground">
                     {loc.city}
