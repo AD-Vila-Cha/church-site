@@ -1,4 +1,4 @@
-import { Accessibility, Baby, Bus, Car, Clock, Shirt, Smile, type LucideIcon } from "lucide-react";
+import { Accessibility, Baby, Clock, MapPin, Shirt, Smile, type LucideIcon } from "lucide-react";
 
 type Faq = { question: string; answer: string; icon: LucideIcon };
 
@@ -22,20 +22,18 @@ const FAQS: Faq[] = [
     icon: Smile,
   },
   {
-    question: "Onde posso estacionar?",
+    question: "Como chego lá?",
     answer:
-      "Existe estacionamento gratuito na rua junto à igreja. Em caso de dúvida, pergunte a quem o receber à entrada.",
-    icon: Car,
+      "Cada local tem as suas indicações de estacionamento e transportes. Veja em «Onde estamos» o que se aplica ao mais próximo de si.",
+    icon: MapPin,
   },
 ];
 
-// PLACEHOLDER: confirm which of these are true for each location.
+// PLACEHOLDER: assumed true for all three locations; to be confirmed by the pastoral team.
 // `repeatsCard` items echo a Q&A card above, so they are hidden on phones to save space.
 const AMENITIES: { label: string; icon: LucideIcon; repeatsCard?: boolean }[] = [
-  { label: "Estacionamento gratuito", icon: Car, repeatsCard: true },
   { label: "Acessível a cadeira de rodas", icon: Accessibility },
   { label: "Espaço para crianças", icon: Baby, repeatsCard: true },
-  { label: "Perto de transportes públicos", icon: Bus },
 ];
 
 export function PrimeiraVez() {

@@ -4,10 +4,15 @@ import { LOCATIONS } from "@/components/site/locations";
 
 const POSTER = "/hero/hero-poster.jpg";
 
-// Sunday celebrations of the main location, surfaced right in the hero.
-const MAIN_LOCATION = LOCATIONS[0];
-const SUNDAY_TIMES = MAIN_LOCATION.services.filter((s) => s.day === "Dom").map((s) => s.time);
-const OTHER_LOCATIONS = LOCATIONS.slice(1).map((l) => l.city).join(" e ");
+// Sunday times shared by the two main locations, surfaced right in the hero.
+const MAIN_LOCATIONS = LOCATIONS.slice(0, 2);
+const sundayTimes = (services: (typeof LOCATIONS)[number]["services"]) =>
+  services.filter((s) => s.day === "Dom").map((s) => s.time);
+const SHARED_SUNDAY_TIMES = sundayTimes(MAIN_LOCATIONS[0].services).filter((time) =>
+  MAIN_LOCATIONS.every((loc) => sundayTimes(loc.services).includes(time)),
+);
+const MAIN_CITIES = MAIN_LOCATIONS.map((l) => l.city).join(" e ");
+const OTHER_LOCATIONS = LOCATIONS.slice(2).map((l) => l.city).join(" e ");
 
 export function Hero() {
   return (
@@ -65,9 +70,9 @@ export function Hero() {
               Domingos
             </p>
             <p className="font-display text-2xl font-extrabold text-foreground md:text-3xl">
-              {SUNDAY_TIMES.join(" · ")}
+              {SHARED_SUNDAY_TIMES.join(" · ")}
             </p>
-            <p className="text-foreground/70">{MAIN_LOCATION.city}</p>
+            <p className="text-foreground/70">{MAIN_CITIES}</p>
           </div>
           {OTHER_LOCATIONS && (
             <a

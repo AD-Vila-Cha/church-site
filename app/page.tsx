@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin } from "lucide-react";
+import { Bus, Car, MapPin } from "lucide-react";
 import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
@@ -75,10 +75,22 @@ export default async function Home() {
                   <h3 className="font-display text-3xl uppercase text-foreground">
                     {loc.city}
                   </h3>
-                  <p className="mt-3 flex items-start gap-2 text-muted-foreground">
-                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                    <span>{loc.address}</span>
-                  </p>
+                  <ul className="mt-3 space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                      <span>{loc.address}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Car className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                      <span>{loc.access.parking}</span>
+                    </li>
+                    {loc.access.transport && (
+                      <li className="flex items-start gap-2">
+                        <Bus className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                        <span>{loc.access.transport}</span>
+                      </li>
+                    )}
+                  </ul>
 
                   <dl className="mt-8 divide-y divide-border border-t">
                     {loc.services.map((s) => (
