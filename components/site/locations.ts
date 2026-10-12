@@ -10,7 +10,6 @@ export type Location = {
   maps: string;
   access: Access;
   services: Service[];
-  // Not open to the public yet: only listed once the `mvp` flag is on.
   mvpOnly?: boolean;
 };
 
