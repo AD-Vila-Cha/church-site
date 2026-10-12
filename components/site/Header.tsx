@@ -7,6 +7,7 @@ import { Brand } from "@/components/site/Brand";
 const LINKS = [
   { href: "#quem-somos", label: "Quem Somos" },
   { href: "#o-que-fazemos", label: "O Que Fazemos" },
+  { href: "#primeira-vez", label: "Primeira Vez?" },
   { href: "#onde-estamos", label: "Onde Estamos" },
   { href: "#contactos", label: "Contactos" },
 ];
@@ -53,12 +54,12 @@ export function Header() {
           <Brand compact={scrolled} />
         </a>
 
-        <nav aria-label="Principal" className="hidden items-center gap-9 lg:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-6 lg:flex xl:gap-9">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="font-display text-xs font-bold uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary"
+              className="whitespace-nowrap font-display text-xs font-bold uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-primary"
             >
               {l.label}
             </a>

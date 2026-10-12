@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { MapPin } from "lucide-react";
+import { Bus, Car, MapPin } from "lucide-react";
 import { ComingSoonHeader } from "@/components/site/ComingSoonHeader";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
+import { PrimeiraVez } from "@/components/site/PrimeiraVez";
 import { LOCATIONS } from "@/components/site/locations";
 import { ComingSoon } from "@/components/site/ComingSoon";
 import { ComingSoonFooter, Footer } from "@/components/site/Footer";
@@ -14,7 +15,7 @@ import { churchJsonLd } from "@/lib/church-schema";
 
 const MVP_TITLE = "AD Vila Chã | Igreja Evangélica em Vila do Conde";
 const MVP_DESCRIPTION =
-  "Assembleia de Deus de Vila Chã, igreja evangélica em Vila do Conde e Barcelos: quem somos, ministérios, horários dos cultos e contactos.";
+  "Assembleia de Deus de Vila Chã, igreja evangélica em Vila Chã, Vila do Conde e Barcelos: quem somos, ministérios, horários dos cultos e contactos.";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Coming-soon metadata comes from the root layout.
@@ -55,6 +56,7 @@ export default async function Home() {
             <WhoWeAre />
             <History />
             <WhatWeDo />
+            <PrimeiraVez />
           </>
         ) : (
           <ComingSoon />
@@ -73,10 +75,22 @@ export default async function Home() {
                   <h3 className="font-display text-3xl uppercase text-foreground">
                     {loc.city}
                   </h3>
-                  <p className="mt-3 flex items-start gap-2 text-muted-foreground">
-                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                    <span>{loc.address}</span>
-                  </p>
+                  <ul className="mt-3 space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                      <span>{loc.address}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Car className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                      <span>{loc.access.parking}</span>
+                    </li>
+                    {loc.access.transport && (
+                      <li className="flex items-start gap-2">
+                        <Bus className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                        <span>{loc.access.transport}</span>
+                      </li>
+                    )}
+                  </ul>
 
                   <dl className="mt-8 divide-y divide-border border-t">
                     {loc.services.map((s) => (
