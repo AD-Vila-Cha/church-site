@@ -9,13 +9,16 @@ export const CONTROLLER = {
   email: CONTACT_EMAIL,
 };
 
+// TODO(#67, confirm before publishing): the retention periods below are proposals; check
+// Vercel's real log retention and the transfer mechanism it relies on (SCCs / EU-US DPF),
+// and have the text reviewed (cookie-law position under Lei 41/2004 included).
 export const POLICY_UPDATED = "2026-10-12";
 
 type Block = { title: string; paragraphs?: string[]; items?: string[] };
 
 // Kept as plain data so it maps onto a Sanity schema (and an EN version) later.
 export const POLICY_INTRO =
-  "Esta política explica que dados pessoais tratamos quando visita este site, porquê, durante quanto tempo e como pode exercer os seus direitos ao abrigo do RGPD.";
+  "Aqui explicamos, de forma simples, que dados pessoais tratamos quando visita este site, porquê, durante quanto tempo e como pode exercer os seus direitos.";
 
 export const POLICY_SECTIONS: Block[] = [
   {
@@ -39,17 +42,25 @@ export const POLICY_SECTIONS: Block[] = [
     ],
   },
   {
-    title: "Com quem partilhamos",
+    title: "Com quem partilhamos os dados",
     items: [
-      "Vercel Inc. (alojamento do site e estatísticas), na qualidade de subcontratante.",
+      "Vercel Inc., que aloja o site e mede as visitas, na qualidade de subcontratante.",
       "WhatsApp (Meta), apenas se escolher contactar-nos por essa via; aplica-se a política de privacidade deles.",
       "As ligações para Instagram, Facebook e YouTube levam-no a sites de terceiros, com políticas próprias.",
     ],
   },
   {
-    title: "Durante quanto tempo guardamos",
+    title: "Transferências para fora da União Europeia",
     paragraphs: [
-      "Os registos do servidor são conservados por um período curto, definido pelo alojamento. As mensagens que nos envie são guardadas apenas o tempo necessário para lhe responder e, depois, apagadas.",
+      "A Vercel Inc. está sediada nos Estados Unidos, pelo que os registos do servidor podem ser tratados fora da União Europeia. Essa transferência assenta em garantias previstas no RGPD, como as cláusulas contratuais-tipo aprovadas pela Comissão Europeia.",
+    ],
+  },
+  {
+    title: "Durante quanto tempo guardamos os dados",
+    items: [
+      "Registos do servidor: até 30 dias.",
+      "Estatísticas de visitas: são agregadas e anónimas, não identificam ninguém.",
+      "Mensagens por email ou WhatsApp: até 12 meses após o último contacto, ou até pedir o apagamento.",
     ],
   },
   {
