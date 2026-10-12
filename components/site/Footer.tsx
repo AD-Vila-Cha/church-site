@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_URL, SOCIALS, WHATSAPP_URL } from "@/components/site/contact";
 
@@ -38,7 +39,7 @@ export function ComingSoonFooter() {
 }
 
 // Full "Contactos" block + footer (contact details and social links).
-export function Footer() {
+export function Footer({ showPrivacyLink = false }: { showPrivacyLink?: boolean }) {
   return (
     <footer id="contactos" className="border-t bg-surface">
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
@@ -140,6 +141,14 @@ export function Footer() {
             <p className="mt-2 text-sm text-muted-foreground">
               © {new Date().getFullYear()} Assembleia de Deus de Vila Chã
             </p>
+            {showPrivacyLink && (
+              <Link
+                href="/politica-de-privacidade"
+                className="mt-1 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Política de Privacidade
+              </Link>
+            )}
           </div>
         </div>
       </div>
