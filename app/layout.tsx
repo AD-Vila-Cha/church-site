@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import "./globals.css";
 import { getSiteUrl } from "@/lib/site";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-PT" className={`${montserratDisplay.variable} ${montserratSans.variable}`}>
       <body>
         {children}
+        <Analytics />
         {shouldInjectToolbar && <VercelToolbar />}
       </body>
     </html>
