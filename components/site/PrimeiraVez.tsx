@@ -2,7 +2,6 @@ import { Accessibility, Baby, Clock, MapPin, Shirt, Smile, type LucideIcon } fro
 
 type Faq = { question: string; answer: string; icon: LucideIcon };
 
-// PLACEHOLDER copy: to be confirmed by the pastoral team before launch.
 const FAQS: Faq[] = [
   {
     question: "Quanto tempo dura o culto?",
@@ -29,7 +28,6 @@ const FAQS: Faq[] = [
   },
 ];
 
-// PLACEHOLDER: assumed true for all three locations; to be confirmed by the pastoral team.
 // `repeatsCard` items echo a Q&A card above, so they are hidden on phones to save space.
 const AMENITIES: { label: string; icon: LucideIcon; repeatsCard?: boolean }[] = [
   { label: "Acessível a cadeira de rodas", icon: Accessibility },
