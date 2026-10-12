@@ -64,9 +64,21 @@ export const POLICY_SECTIONS: Block[] = [
     ],
   },
   {
+    title: "Segurança",
+    paragraphs: [
+      "O site é servido por HTTPS e não recolhemos dados além dos descritos aqui. Só as pessoas da equipa que precisam de responder às suas mensagens têm acesso a elas.",
+    ],
+  },
+  {
     title: "Os seus direitos",
     paragraphs: [
       `Pode pedir o acesso, a retificação ou o apagamento dos seus dados, limitar ou opor-se ao tratamento e retirar o consentimento a qualquer momento, escrevendo para ${CONTROLLER.email}. Tem também o direito de apresentar reclamação à Comissão Nacional de Proteção de Dados (cnpd.pt).`,
+    ],
+  },
+  {
+    title: "Alterações a esta política",
+    paragraphs: [
+      "Podemos atualizar esta política, por exemplo quando o site passar a ter novas funcionalidades. A data da última atualização está sempre no topo desta página.",
     ],
   },
 ];
