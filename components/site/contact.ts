@@ -2,7 +2,6 @@ import { Facebook, Instagram, Youtube } from "@/components/site/SocialIcons";
 
 export const CONTACT_EMAIL = "geral@advilacha.pt";
 
-// Assumed number (call + WhatsApp): must be confirmed with the pastoral team before `mvp` goes live (#12).
 export const PHONE_DISPLAY = "+351 961 208 312";
 export const PHONE_URL = "tel:+351961208312";
 export const WHATSAPP_URL = `https://wa.me/351961208312?text=${encodeURIComponent(
