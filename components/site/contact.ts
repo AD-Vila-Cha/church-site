@@ -2,6 +2,12 @@ import { Facebook, Instagram, Youtube } from "@/components/site/SocialIcons";
 
 export const CONTACT_EMAIL = "geral@advilacha.pt";
 
+export const PHONE_DISPLAY = "+351 961 208 312";
+export const PHONE_URL = "tel:+351961208312";
+export const WHATSAPP_URL = `https://wa.me/351961208312?text=${encodeURIComponent(
+  "Olá! Gostaria de falar com a Assembleia de Deus de Vila Chã.",
+)}`;
+
 export const SOCIALS = [
   {
     name: "Instagram",
