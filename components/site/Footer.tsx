@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Mail } from "lucide-react";
-import { CONTACT_EMAIL, SOCIALS } from "@/components/site/contact";
+import { Mail, MessageCircle, Phone } from "lucide-react";
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_URL, SOCIALS, WHATSAPP_URL } from "@/components/site/contact";
 
 // Slim footer shown while the MVP is gated (production, `mvp` flag off).
 export function ComingSoonFooter() {
@@ -52,21 +52,59 @@ export function Footer() {
               Tem uma pergunta, um pedido de oração ou quer simplesmente visitar-nos? Teremos
               muito gosto em responder.
             </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="mt-8 inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Enviar email
-            </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={PHONE_URL}
+                className="inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Ligar
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center border border-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                WhatsApp
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="inline-flex items-center justify-center border border-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                Email
+              </a>
+            </div>
           </div>
 
           <div>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
-            >
-              <Mail className="h-4 w-4 shrink-0 text-primary" /> {CONTACT_EMAIL}
-            </a>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href={PHONE_URL}
+                  className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <Phone className="h-4 w-4 shrink-0 text-primary" /> {PHONE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <MessageCircle className="h-4 w-4 shrink-0 text-primary" /> WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <Mail className="h-4 w-4 shrink-0 text-primary" /> {CONTACT_EMAIL}
+                </a>
+              </li>
+            </ul>
 
             <p className="eyebrow mt-10">Siga-nos</p>
             <div className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
