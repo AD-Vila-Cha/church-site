@@ -15,7 +15,7 @@ import { churchJsonLd } from "@/lib/church-schema";
 
 const MVP_TITLE = "AD Vila Chã | Igreja Evangélica em Vila do Conde";
 const MVP_DESCRIPTION =
-  "Assembleia de Deus de Vila Chã, igreja evangélica em Vila do Conde e Barcelos: quem somos, ministérios, horários dos cultos e contactos.";
+  "Assembleia de Deus de Vila Chã, igreja evangélica em Vila Chã, Vila do Conde e Barcelos: quem somos, ministérios, horários dos cultos e contactos.";
 
 export async function generateMetadata(): Promise<Metadata> {
   // Coming-soon metadata comes from the root layout.
