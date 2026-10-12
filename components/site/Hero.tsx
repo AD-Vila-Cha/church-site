@@ -50,6 +50,30 @@ export function Hero() {
           crescer na Palavra e servir a cidade.
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
+          <a
+            href="#onde-estamos"
+            className="inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Planeie a sua visita
+          </a>
+          <a
+            href="#quem-somos"
+            className="inline-flex items-center justify-center bg-foreground px-8 py-4 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-90"
+          >
+            Quem somos
+          </a>
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-t border-foreground/15 pt-6">
+          <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
+            <p className="font-display text-xs font-extrabold uppercase tracking-[0.22em] text-primary">
+              Domingos
+            </p>
+            <p className="font-display text-2xl font-extrabold text-foreground md:text-3xl">
+              {SHARED_SUNDAY_TIMES.join(" · ")}
+            </p>
+            <p className="text-foreground/70">{MAIN_CITIES}</p>
+          </div>
           {OTHER_LOCATIONS && (
             <a
               href="#onde-estamos"
