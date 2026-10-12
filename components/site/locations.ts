@@ -10,11 +10,13 @@ export type Location = {
   maps: string;
   access: Access;
   services: Service[];
+  mvpOnly?: boolean;
 };
 
 export const LOCATIONS: Location[] = [
   {
     city: "Vila Chã",
+    mvpOnly: true,
     address: "Tv. das Pedreiras 22, 4485-702 Vila Chã",
     street: "Tv. das Pedreiras 22",
     postalCode: "4485-702",
@@ -53,3 +55,6 @@ export const LOCATIONS: Location[] = [
     ],
   },
 ];
+
+export const visibleLocations = (showMvp: boolean) =>
+  LOCATIONS.filter((loc) => showMvp || !loc.mvpOnly);

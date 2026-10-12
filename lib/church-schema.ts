@@ -1,11 +1,11 @@
 import { CONTACT_EMAIL, SOCIALS } from "@/components/site/contact";
-import { LOCATIONS } from "@/components/site/locations";
+import { visibleLocations } from "@/components/site/locations";
 import { getSiteUrl } from "@/lib/site";
 
 const DAYS: Record<string, string> = { Dom: "Sunday", Seg: "Monday", Ter: "Tuesday", Qua: "Wednesday", Qui: "Thursday", Sex: "Friday", Sáb: "Saturday" };
 
 // schema.org `Church` description, built from the same data the page shows.
-export function churchJsonLd() {
+export function churchJsonLd(showMvp: boolean) {
   const url = getSiteUrl();
 
   return {
@@ -18,7 +18,7 @@ export function churchJsonLd() {
     image: `${url}/opengraph-image.jpg`,
     email: CONTACT_EMAIL,
     sameAs: SOCIALS.map((s) => s.href),
-    location: LOCATIONS.map((loc) => ({
+    location: visibleLocations(showMvp).map((loc) => ({
       "@type": "Church",
       name: `Assembleia de Deus de Vila Chã — ${loc.city}`,
       address: {
