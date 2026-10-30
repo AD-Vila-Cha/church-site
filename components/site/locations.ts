@@ -20,7 +20,7 @@ export const LOCATIONS: Location[] = [
     address: "Tv. das Pedreiras 22, 4485-702 Vila Chã",
     street: "Tv. das Pedreiras 22",
     postalCode: "4485-702",
-    maps: "https://www.google.com/maps/search/?api=1&query=Tv.%20das%20Pedreiras%2022%2C%204485-702%20Vila%20Ch%C3%A3",
+    maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20de%20Vila%20Ch%C3%A3&query_place_id=ChIJuV7aWQBDJA0R7eeYOo1JGqc",
     access: { parking: "Estacionamento gratuito" },
     services: [
       { day: "Dom", time: "10:00", type: "Culto de Celebração" },
@@ -32,7 +32,7 @@ export const LOCATIONS: Location[] = [
     address: "R. Dom João III 70-84, 4480-646 Vila do Conde",
     street: "R. Dom João III 70-84",
     postalCode: "4480-646",
-    maps: "https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Jo%C3%A3o%20III%2070-84%2C%204480-646%20Vila%20do%20Conde",
+    maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20de%20Vila%20do%20Conde&query_place_id=ChIJwyoQKoZHJA0RIPDqtzMEmRM",
     access: {
       parking: "Estacionamento gratuito na rua",
       transport: "Transportes públicos nas proximidades",
@@ -45,9 +45,10 @@ export const LOCATIONS: Location[] = [
   },
   {
     city: "Barcelos",
-    address: "Urbanização da Formiga, Edifício Panorâmico, Arcozelo, Barcelos",
-    street: "Urbanização da Formiga, Edifício Panorâmico, Arcozelo",
-    maps: "https://www.google.com/maps/search/?api=1&query=Rua%20da%20Formiga%2C%20Arcozelo%2C%20Barcelos",
+    address: "R. Bartolomeu Dias, Ed. Panorâmico, Lj 1, 4750-159 Arcozelo",
+    street: "R. Bartolomeu Dias, Ed. Panorâmico, Lj 1",
+    postalCode: "4750-159",
+    maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20Barcelos&query_place_id=ChIJoTy1gzhTJA0RCR-mXD420lg",
     access: { parking: "Estacionamento gratuito na rua" },
     services: [
       { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
