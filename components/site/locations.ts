@@ -34,7 +34,7 @@ export const LOCATIONS: Location[] = [
     postalCode: "4480-646",
     maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20de%20Vila%20do%20Conde&query_place_id=ChIJwyoQKoZHJA0RIPDqtzMEmRM",
     access: {
-      parking: "Estacionamento gratuito na rua",
+      parking: "Estacionamento nas proximidades",
       transport: "Transportes públicos nas proximidades",
     },
     services: [
@@ -49,7 +49,7 @@ export const LOCATIONS: Location[] = [
     street: "R. Bartolomeu Dias, Ed. Panorâmico, Lj 1",
     postalCode: "4750-159",
     maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20Barcelos&query_place_id=ChIJoTy1gzhTJA0RCR-mXD420lg",
-    access: { parking: "Estacionamento gratuito na rua" },
+    access: { parking: "Estacionamento nas proximidades" },
     services: [
       { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
       { day: "Dom", time: "15:00", type: "Culto de Celebração" },
