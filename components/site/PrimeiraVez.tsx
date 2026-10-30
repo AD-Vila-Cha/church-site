@@ -17,7 +17,7 @@ const FAQS: Faq[] = [
   {
     question: "Posso levar os meus filhos?",
     answer:
-      "Claro! As crianças são sempre bem-vindas. Durante o culto há um espaço próprio para os mais novos, com monitores da igreja.",
+      "Claro! As crianças são sempre bem-vindas. Durante o culto, sempre que possível, há um espaço próprio para os mais novos, com monitores da igreja.",
     icon: Smile,
   },
   {
