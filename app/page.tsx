@@ -5,7 +5,7 @@ import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { History } from "@/components/site/History";
 import { PrimeiraVez } from "@/components/site/PrimeiraVez";
-import { visibleLocations } from "@/components/site/locations";
+import { accessLabel, visibleLocations } from "@/components/site/locations";
 import { ComingSoon } from "@/components/site/ComingSoon";
 import { ComingSoonFooter, Footer } from "@/components/site/Footer";
 import { WhatWeDo } from "@/components/site/WhatWeDo";
@@ -83,15 +83,12 @@ export default async function Home() {
                       <span>{loc.address}</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Car className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                      <span>{loc.access.parking}</span>
+                      <span className="mt-1 flex shrink-0 gap-1.5 text-primary">
+                        <Car className="h-4 w-4" />
+                        {loc.access.publicTransport && <Bus className="h-4 w-4" />}
+                      </span>
+                      <span>{accessLabel(loc.access)}</span>
                     </li>
-                    {loc.access.transport && (
-                      <li className="flex items-start gap-2">
-                        <Bus className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                        <span>{loc.access.transport}</span>
-                      </li>
-                    )}
                   </ul>
 
                   <dl className="mt-8 divide-y divide-border border-t">
