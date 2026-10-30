@@ -48,7 +48,7 @@ export const LOCATIONS: Location[] = [
     address: "R. Bartolomeu Dias, Ed. Panorâmico, Lj 1, 4750-159 Arcozelo",
     street: "R. Bartolomeu Dias, Ed. Panorâmico, Lj 1",
     postalCode: "4750-159",
-    maps: "https://www.google.com/maps/search/?api=1&query=R.%20Bartolomeu%20Dias%2C%20Ed.%20Panor%C3%A2mico%2C%20Lj%201%2C%204750-159%20Arcozelo",
+    maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20Barcelos&query_place_id=ChIJoTy1gzhTJA0RCR-mXD420lg",
     access: { parking: "Estacionamento gratuito na rua" },
     services: [
       { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
