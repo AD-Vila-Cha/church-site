@@ -1,6 +1,6 @@
 type Service = { day: string; time: string; type: string };
 
-type Access = { parking: string; transport?: string };
+type Access = { parking: string; publicTransport?: boolean };
 
 export type Location = {
   city: string;
@@ -35,7 +35,7 @@ export const LOCATIONS: Location[] = [
     maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20de%20Vila%20do%20Conde&query_place_id=ChIJwyoQKoZHJA0RIPDqtzMEmRM",
     access: {
       parking: "Estacionamento nas proximidades",
-      transport: "Transportes públicos nas proximidades",
+      publicTransport: true,
     },
     services: [
       { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
@@ -56,6 +56,10 @@ export const LOCATIONS: Location[] = [
     ],
   },
 ];
+
+// One line for the access row; parking and public transport share the "nas proximidades" wording.
+export const accessLabel = ({ parking, publicTransport }: Access) =>
+  publicTransport ? "Estacionamento e transportes públicos nas proximidades" : parking;
 
 export const visibleLocations = (showMvp: boolean) =>
   LOCATIONS.filter((loc) => showMvp || !loc.mvpOnly);
