@@ -1,4 +1,4 @@
-type Service = { day: string; time: string; type: string };
+type Service = { day: string; time: string; type: string; comingSoonOnly?: boolean };
 
 type Access = { parking: string; publicTransport?: boolean };
 
@@ -39,8 +39,8 @@ export const LOCATIONS: Location[] = [
     },
     services: [
       { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
-      { day: "Dom", time: "10:00", type: "Culto de Celebração" },
-      { day: "Dom", time: "15:30", type: "Culto de Celebração" },
+      { day: "Dom", time: "10:00", type: "Culto de Celebração", comingSoonOnly: true },
+      { day: "Dom", time: "15:30", type: "Culto de Celebração", comingSoonOnly: true },
     ],
   },
   {
@@ -61,5 +61,9 @@ export const LOCATIONS: Location[] = [
 export const accessLabel = ({ parking, publicTransport }: Access) =>
   publicTransport ? "Estacionamento e transportes públicos nas proximidades" : parking;
 
-export const visibleLocations = (showMvp: boolean) =>
-  LOCATIONS.filter((loc) => showMvp || !loc.mvpOnly);
+// Locations and services shown for the current flag state; `comingSoonOnly` services drop out once the MVP is on.
+export const visibleLocations = (showMvp: boolean): Location[] =>
+  LOCATIONS.filter((loc) => showMvp || !loc.mvpOnly).map((loc) => ({
+    ...loc,
+    services: loc.services.filter((s) => !showMvp || !s.comingSoonOnly),
+  }));
