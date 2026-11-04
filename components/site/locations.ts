@@ -39,6 +39,8 @@ export const LOCATIONS: Location[] = [
     },
     services: [
       { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
+      { day: "Dom", time: "10:00", type: "Culto de Celebração" },
+      { day: "Dom", time: "15:30", type: "Culto de Celebração" },
     ],
   },
   {
