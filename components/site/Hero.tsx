@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { HeroVideo } from "@/components/site/HeroVideo";
-import { LOCATIONS } from "@/components/site/locations";
+import { visibleLocations } from "@/components/site/locations";
 
 const POSTER = "/hero/hero-poster.jpg";
 
 // Sunday times shared by the two main locations, surfaced right in the hero.
+const LOCATIONS = visibleLocations(true);
 const MAIN_LOCATIONS = LOCATIONS.slice(0, 2);
 const sundayTimes = (services: (typeof LOCATIONS)[number]["services"]) =>
   services.filter((s) => s.day === "Dom").map((s) => s.time);
