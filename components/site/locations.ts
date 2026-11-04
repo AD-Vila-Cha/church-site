@@ -39,8 +39,6 @@ export const LOCATIONS: Location[] = [
     },
     services: [
       { day: "Qua", time: "20:30", type: "Culto de Estudo Bíblico" },
-      { day: "Dom", time: "10:00", type: "Culto de Celebração" },
-      { day: "Dom", time: "15:30", type: "Culto de Celebração" },
     ],
   },
   {
@@ -51,7 +49,7 @@ export const LOCATIONS: Location[] = [
     maps: "https://www.google.com/maps/search/?api=1&query=Igreja%20Evang%C3%A9lica%20Assembleia%20de%20Deus%20Barcelos&query_place_id=ChIJoTy1gzhTJA0RCR-mXD420lg",
     access: { parking: "Estacionamento nas proximidades" },
     services: [
-      { day: "Qua", time: "10:00", type: "Culto de Estudo Bíblico" },
+      { day: "Qua", time: "15:00", type: "Culto de Estudo Bíblico" },
       { day: "Dom", time: "15:00", type: "Culto de Celebração" },
     ],
   },
